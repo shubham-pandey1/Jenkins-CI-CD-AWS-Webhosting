@@ -17,6 +17,7 @@ node {
     stage('Deploy to EC2') {
     echo 'Deploying to EC2'
     sh """
+        rm -rf ${appDir}
         mkdir -p ${appDir}
         rsync -av --delete --exclude='.git' --exclude='node_modules' ./ ${appDir}
 
