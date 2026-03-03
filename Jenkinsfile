@@ -18,10 +18,7 @@ node {
             sudo mkdir -p ${appDir}
             sudo chown -R jenkins:jenkins ${appDir}
 
-            rsync -av --delete \
-                --exclude='.git' \
-                --exclude='node_modules' \
-                ./ ${appDir}
+            rsync -av --delete --exclude='.git' --exclude='node_modules' ./ ${appDir}
 
             cd ${appDir}
             sudo npm install
