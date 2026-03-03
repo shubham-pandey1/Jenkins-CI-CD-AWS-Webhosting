@@ -8,8 +8,10 @@ node {
 
     stage('Clone Repo') {
         echo 'Cloning the repo'
-        git branch: 'main',
+        git(
+            branch: 'main',
             url: 'https://github.com/shubham-pandey1/Jenkins-CI-CD-AWS-Webhosting.git'
+        )
     }
 
     stage('Deploy to EC2') {
